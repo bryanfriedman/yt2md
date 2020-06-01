@@ -20,7 +20,7 @@ This tool uses Go templates to output Markdown. You may use the `video.md` (defa
 
 ### Command Line Options
 
-Below are the flags for passing in configuration. You may also use a config file to set these parameters.
+Below are the flags for passing in configuration. You may also use a config file to set these parameters. At a minimum, you'll need a YouTube API key (see [https://cloud.google.com/docs/authentication/api-keys](https://cloud.google.com/docs/authentication/api-keys)) and a playlist or video ID (from a YouTube URL).
 
 ```
 Usage:

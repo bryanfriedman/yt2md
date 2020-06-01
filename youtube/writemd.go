@@ -15,8 +15,6 @@ type Video struct {
 	Description string
 	FileName    string
 	VideoID     string
-	Hosts       []string
-	Guests      []string
 	Date        string
 	PublishDate string
 	Image       string
@@ -56,12 +54,12 @@ func WriteMarkdownFile(yt YouTube, videoID string, fileName string) {
 }
 
 // WriteMarkdownFiles creates multiple Markdown files based on the given playlist
-func WriteMarkdownFiles(yt YouTube, playlistID string) {
+func WriteMarkdownFiles(yt YouTube, playlistID string, fileName string) {
 
 	videoIDs := yt.getPlaylistVideoIDList(playlistID)
 	for i, videoID := range videoIDs {
 		episodeNumber := fmt.Sprintf("%04d", i+1)
-		WriteMarkdownFile(yt, videoID, episodeNumber)
+		WriteMarkdownFile(yt, videoID, fileName+episodeNumber)
 	}
 
 }

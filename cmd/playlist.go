@@ -18,12 +18,13 @@ var playlistCmd = &cobra.Command{
 
 		yt := handleCmd(cmd, args)
 
+		name := viper.GetString("name")
 		playlist := viper.GetString("playlist")
 		if playlist == "" {
 			helpers.HandleError(errors.New("Use --playlist or define in config file"), "Must provide a playlist")
 		}
 
-		youtube.WriteMarkdownFiles(yt, playlist)
+		youtube.WriteMarkdownFiles(yt, playlist, name)
 
 	},
 }

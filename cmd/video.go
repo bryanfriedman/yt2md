@@ -18,10 +18,13 @@ var videoCmd = &cobra.Command{
 
 		yt := handleCmd(cmd, args)
 
-		video := viper.GetString("video")
 		name := viper.GetString("name")
+		video := viper.GetString("video")
 		if video == "" {
 			helpers.HandleError(errors.New("Use --video or define in config file"), "Must provide a video")
+		}
+		if name == "" {
+			name = "0001"
 		}
 
 		youtube.WriteMarkdownFile(yt, video, name)
@@ -33,8 +36,6 @@ func init() {
 	rootCmd.AddCommand(videoCmd)
 
 	videoCmd.Flags().StringP("video", "v", "", "The video to retrieve videos from.")
-	videoCmd.Flags().StringP("name", "n", "0001", "The name to use when creating the Markdown file.")
 	viper.BindPFlag("video", videoCmd.Flags().Lookup("video"))
-	viper.BindPFlag("name", videoCmd.Flags().Lookup("name"))
 
 }

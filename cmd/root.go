@@ -40,6 +40,7 @@ func init() {
 	rootCmd.PersistentFlags().StringP("imagePath", "i", "images/", "Path to write thumbnail image files to.")
 	rootCmd.PersistentFlags().StringP("templatePath", "t", "templates/", "Path to folder where template files are.")
 	rootCmd.PersistentFlags().StringP("templateFile", "f", "video.md", "File name of Go template for output.")
+	rootCmd.PersistentFlags().StringP("name", "n", "", "The name to use when creating the Markdown file (without the .md extension).")
 	rootCmd.PersistentFlags().BoolP("thumbs", "b", true, "Set whether you want to download thumbnail images or not.")
 	err := viper.BindPFlags(rootCmd.PersistentFlags())
 	helpers.HandleError(err, "")

@@ -37,6 +37,7 @@ Flags:
   -h, --help                  help for yt2md
   -i, --imagePath string      Path to write thumbnail image files to. (default "images/")
   -m, --markdownPath string   Path to write Markdown files to. (default "markdown/")
+  -n, --name string           The name to use when creating the Markdown file (without the .md extension).
   -f, --templateFile string   File name of Go template for output. (default "video.md")
   -t, --templatePath string   Path to folder where template files are. (default "templates/")
   -b, --thumbs                Set whether you want to download thumbnail images or not. (default true)

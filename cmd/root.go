@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/bryanfriedman/yt2mdhelpers"
+	"github.com/bryanfriedman/yt2md/helpers"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

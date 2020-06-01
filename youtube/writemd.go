@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/bryanfriedman/yt2mdhelpers"
+	"github.com/bryanfriedman/yt2md/helpers"
 )
 
 // Video values

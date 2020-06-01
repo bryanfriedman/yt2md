@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/bryanfriedman/yt2mdhelpers"
-	"github.com/bryanfriedman/yt2mdyoutube"
+	"github.com/bryanfriedman/yt2md/helpers"
+	"github.com/bryanfriedman/yt2md/youtube"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

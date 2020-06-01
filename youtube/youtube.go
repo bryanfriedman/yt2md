@@ -5,7 +5,7 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/youtube/v3"
 
-	"github.com/bryanfriedman/yt2mdhelpers"
+	"github.com/bryanfriedman/yt2md/helpers"
 )
 
 // PathInfo values (with trailing slashes)

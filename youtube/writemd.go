@@ -54,9 +54,9 @@ func WriteMarkdownFile(yt YouTube, videoID string, fileName string) {
 }
 
 // WriteMarkdownFiles creates multiple Markdown files based on the given playlist
-func WriteMarkdownFiles(yt YouTube, playlistID string, fileName string) {
+func WriteMarkdownFiles(yt YouTube, playlistID string, fileName string, reverseSort bool) {
 
-	videoIDs := yt.getPlaylistVideoIDList(playlistID)
+	videoIDs := yt.getPlaylistVideoIDList(playlistID, reverseSort)
 	for i, videoID := range videoIDs {
 		episodeNumber := fmt.Sprintf("%04d", i+1)
 		WriteMarkdownFile(yt, videoID, fileName+episodeNumber)

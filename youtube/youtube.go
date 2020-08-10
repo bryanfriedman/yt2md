@@ -44,7 +44,7 @@ func (yt *YouTube) getPlaylistItemsList(part string, playlistID string, pageToke
 	return response
 }
 
-func (yt *YouTube) getPlaylistVideoIDList(playlistID string) []string {
+func (yt *YouTube) getPlaylistVideoIDList(playlistID string, reverseSort bool) []string {
 	idList := []string{}
 	nextPageToken := ""
 	for {
@@ -52,7 +52,11 @@ func (yt *YouTube) getPlaylistVideoIDList(playlistID string) []string {
 		playlistResponse := yt.getPlaylistItemsList("snippet", playlistID, nextPageToken)
 
 		for _, playlistItem := range playlistResponse.Items {
-			idList = append(idList, playlistItem.Snippet.ResourceId.VideoId)
+			if reverseSort {
+				idList = append([]string{playlistItem.Snippet.ResourceId.VideoId}, idList...)
+			} else {
+				idList = append(idList, playlistItem.Snippet.ResourceId.VideoId)
+			}
 		}
 
 		// Set the token to retrieve the next page of results
